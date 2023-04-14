@@ -55,6 +55,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "tribracket"
+        },
+        {
+          "type": "SYMBOL",
           "name": "element"
         },
         {
@@ -70,6 +74,34 @@
           "name": "erroneous_end_tag"
         }
       ]
+    },
+    "tribracket": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "TOKEN",
+          "content": {
+            "type": "PREC",
+            "value": 1,
+            "content": {
+              "type": "STRING",
+              "value": "{{{"
+            }
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tribracket_content"
+        },
+        {
+          "type": "STRING",
+          "value": "}}}"
+        }
+      ]
+    },
+    "tribracket_content": {
+      "type": "PATTERN",
+      "value": "[^}]*"
     },
     "element": {
       "type": "CHOICE",

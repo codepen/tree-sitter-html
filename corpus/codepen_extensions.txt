@@ -1,0 +1,25 @@
+===================================
+HTML Include
+===================================
+<!doctype html>
+
+{{{ https://raw.codepen.plumbing/chriscoyier/pen/AvYQdv?file=/style.css }}}
+
+<body>
+  <h1>Hello</h1>
+</body>
+---
+
+(fragment
+  (doctype)
+  (tribracket (tribracket_content))
+  (element
+    (start_tag (tag_name))
+      (element
+        (start_tag (tag_name))
+          (text)
+        (end_tag (tag_name))
+      )
+    (end_tag (tag_name))
+  )
+)
