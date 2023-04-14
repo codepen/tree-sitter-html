@@ -34,7 +34,7 @@ module.exports = grammar({
         $.erroneous_end_tag
       ),
 
-    html_include_reference: $ => 'Hello',
+    html_include_reference: $ => /[^}]*/,
 
     html_include: $ =>
       seq(token(prec(1, '{{{')), $.html_include_reference, '}}}'),

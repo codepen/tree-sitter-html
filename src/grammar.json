@@ -76,8 +76,8 @@
       ]
     },
     "html_include_reference": {
-      "type": "STRING",
-      "value": "Hello"
+      "type": "PATTERN",
+      "value": "[^}]*"
     },
     "html_include": {
       "type": "SEQ",
