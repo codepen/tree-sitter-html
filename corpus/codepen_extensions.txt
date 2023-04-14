@@ -1,11 +1,7 @@
 ===================================
-HTML Includes
+Token
 ===================================
 {{{Hello}}}
 ---
 
-(fragment
-  (element
-    (start_tag (tag_name))
-    (text)
-    (end_tag (tag_name))))
+ (fragment (html_include (html_include_reference)))

@@ -55,6 +55,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "html_include"
+        },
+        {
+          "type": "SYMBOL",
           "name": "element"
         },
         {
@@ -68,6 +72,34 @@
         {
           "type": "SYMBOL",
           "name": "erroneous_end_tag"
+        }
+      ]
+    },
+    "html_include_reference": {
+      "type": "STRING",
+      "value": "Hello"
+    },
+    "html_include": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "TOKEN",
+          "content": {
+            "type": "PREC",
+            "value": 1,
+            "content": {
+              "type": "STRING",
+              "value": "{{{"
+            }
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "html_include_reference"
+        },
+        {
+          "type": "STRING",
+          "value": "}}}"
         }
       ]
     },
