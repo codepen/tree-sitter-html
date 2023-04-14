@@ -55,7 +55,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "html_include"
+          "name": "tribracket"
         },
         {
           "type": "SYMBOL",
@@ -75,11 +75,11 @@
         }
       ]
     },
-    "html_include_reference": {
+    "tribracket_content": {
       "type": "PATTERN",
       "value": "[^}]*"
     },
-    "html_include": {
+    "tribracket": {
       "type": "SEQ",
       "members": [
         {
@@ -95,7 +95,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "html_include_reference"
+          "name": "tribracket_content"
         },
         {
           "type": "STRING",

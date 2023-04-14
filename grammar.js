@@ -27,17 +27,17 @@ module.exports = grammar({
         $.doctype,
         $.entity,
         $.text,
-        $.html_include,
+        $.tribracket,
         $.element,
         $.script_element,
         $.style_element,
         $.erroneous_end_tag
       ),
 
-    html_include_reference: $ => /[^}]*/,
+    tribracket_content: $ => /[^}]*/,
 
-    html_include: $ =>
-      seq(token(prec(1, '{{{')), $.html_include_reference, '}}}'),
+    tribracket: $ =>
+      seq(token(prec(1, '{{{')), $.tribracket_content, '}}}'),
 
     element: $ =>
       choice(

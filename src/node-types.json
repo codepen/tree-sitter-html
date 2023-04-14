@@ -56,10 +56,6 @@
           "named": true
         },
         {
-          "type": "html_include",
-          "named": true
-        },
-        {
           "type": "script_element",
           "named": true
         },
@@ -77,6 +73,10 @@
         },
         {
           "type": "text",
+          "named": true
+        },
+        {
+          "type": "tribracket",
           "named": true
         }
       ]
@@ -137,10 +137,6 @@
           "named": true
         },
         {
-          "type": "html_include",
-          "named": true
-        },
-        {
           "type": "script_element",
           "named": true
         },
@@ -151,20 +147,9 @@
         {
           "type": "text",
           "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "html_include",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
+        },
         {
-          "type": "html_include_reference",
+          "type": "tribracket",
           "named": true
         }
       ]
@@ -270,6 +255,21 @@
     }
   },
   {
+    "type": "tribracket",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tribracket_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "\"",
     "named": false
   },
@@ -326,10 +326,6 @@
     "named": true
   },
   {
-    "type": "html_include_reference",
-    "named": true
-  },
-  {
     "type": "raw_text",
     "named": true
   },
@@ -339,6 +335,10 @@
   },
   {
     "type": "text",
+    "named": true
+  },
+  {
+    "type": "tribracket_content",
     "named": true
   },
   {

@@ -4,4 +4,4 @@ HTML Include
 {{{ https://raw.codepen.plumbing/chriscoyier/pen/AvYQdv?file=/style.css }}}
 ---
 
- (fragment (html_include (html_include_reference)))
+ (fragment (tribracket (tribracket_content)))

@@ -21,7 +21,7 @@ enum {
   aux_sym_doctype_token1 = 2,
   anon_sym_GT = 3,
   sym__doctype = 4,
-  sym_html_include_reference = 5,
+  sym_tribracket_content = 5,
   anon_sym_LBRACE_LBRACE_LBRACE = 6,
   anon_sym_RBRACE_RBRACE_RBRACE = 7,
   anon_sym_LT = 8,
@@ -47,7 +47,7 @@ enum {
   sym_fragment = 28,
   sym_doctype = 29,
   sym__node = 30,
-  sym_html_include = 31,
+  sym_tribracket = 31,
   sym_element = 32,
   sym_script_element = 33,
   sym_style_element = 34,
@@ -69,7 +69,7 @@ static const char * const ts_symbol_names[] = {
   [aux_sym_doctype_token1] = "doctype_token1",
   [anon_sym_GT] = ">",
   [sym__doctype] = "doctype",
-  [sym_html_include_reference] = "html_include_reference",
+  [sym_tribracket_content] = "tribracket_content",
   [anon_sym_LBRACE_LBRACE_LBRACE] = "{{{",
   [anon_sym_RBRACE_RBRACE_RBRACE] = "}}}",
   [anon_sym_LT] = "<",
@@ -95,7 +95,7 @@ static const char * const ts_symbol_names[] = {
   [sym_fragment] = "fragment",
   [sym_doctype] = "doctype",
   [sym__node] = "_node",
-  [sym_html_include] = "html_include",
+  [sym_tribracket] = "tribracket",
   [sym_element] = "element",
   [sym_script_element] = "script_element",
   [sym_style_element] = "style_element",
@@ -117,7 +117,7 @@ static const TSSymbol ts_symbol_map[] = {
   [aux_sym_doctype_token1] = aux_sym_doctype_token1,
   [anon_sym_GT] = anon_sym_GT,
   [sym__doctype] = sym__doctype,
-  [sym_html_include_reference] = sym_html_include_reference,
+  [sym_tribracket_content] = sym_tribracket_content,
   [anon_sym_LBRACE_LBRACE_LBRACE] = anon_sym_LBRACE_LBRACE_LBRACE,
   [anon_sym_RBRACE_RBRACE_RBRACE] = anon_sym_RBRACE_RBRACE_RBRACE,
   [anon_sym_LT] = anon_sym_LT,
@@ -143,7 +143,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_fragment] = sym_fragment,
   [sym_doctype] = sym_doctype,
   [sym__node] = sym__node,
-  [sym_html_include] = sym_html_include,
+  [sym_tribracket] = sym_tribracket,
   [sym_element] = sym_element,
   [sym_script_element] = sym_script_element,
   [sym_style_element] = sym_style_element,
@@ -180,7 +180,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = false,
   },
-  [sym_html_include_reference] = {
+  [sym_tribracket_content] = {
     .visible = true,
     .named = true,
   },
@@ -284,7 +284,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = true,
   },
-  [sym_html_include] = {
+  [sym_tribracket] = {
     .visible = true,
     .named = true,
   },
@@ -716,7 +716,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(sym__doctype);
       END_STATE();
     case 67:
-      ACCEPT_TOKEN(sym_html_include_reference);
+      ACCEPT_TOKEN(sym_tribracket_content);
       if (lookahead == '\t' ||
           lookahead == '\n' ||
           lookahead == '\r' ||
@@ -725,7 +725,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != '}') ADVANCE(68);
       END_STATE();
     case 68:
-      ACCEPT_TOKEN(sym_html_include_reference);
+      ACCEPT_TOKEN(sym_tribracket_content);
       if (lookahead != 0 &&
           lookahead != '}') ADVANCE(68);
       END_STATE();
@@ -1052,7 +1052,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_fragment] = STATE(80),
     [sym_doctype] = STATE(6),
     [sym__node] = STATE(6),
-    [sym_html_include] = STATE(6),
+    [sym_tribracket] = STATE(6),
     [sym_element] = STATE(6),
     [sym_script_element] = STATE(6),
     [sym_style_element] = STATE(6),
@@ -1104,7 +1104,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(7), 8,
       sym_doctype,
       sym__node,
-      sym_html_include,
+      sym_tribracket,
       sym_element,
       sym_script_element,
       sym_style_element,
@@ -1140,7 +1140,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(2), 8,
       sym_doctype,
       sym__node,
-      sym_html_include,
+      sym_tribracket,
       sym_element,
       sym_script_element,
       sym_style_element,
@@ -1176,7 +1176,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(5), 8,
       sym_doctype,
       sym__node,
-      sym_html_include,
+      sym_tribracket,
       sym_element,
       sym_script_element,
       sym_style_element,
@@ -1212,7 +1212,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(7), 8,
       sym_doctype,
       sym__node,
-      sym_html_include,
+      sym_tribracket,
       sym_element,
       sym_script_element,
       sym_style_element,
@@ -1246,7 +1246,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(8), 8,
       sym_doctype,
       sym__node,
-      sym_html_include,
+      sym_tribracket,
       sym_element,
       sym_script_element,
       sym_style_element,
@@ -1280,7 +1280,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(7), 8,
       sym_doctype,
       sym__node,
-      sym_html_include,
+      sym_tribracket,
       sym_element,
       sym_script_element,
       sym_style_element,
@@ -1314,7 +1314,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(8), 8,
       sym_doctype,
       sym__node,
-      sym_html_include,
+      sym_tribracket,
       sym_element,
       sym_script_element,
       sym_style_element,
@@ -2050,7 +2050,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(3), 1,
       sym_comment,
     ACTIONS(277), 1,
-      sym_html_include_reference,
+      sym_tribracket_content,
   [1314] = 2,
     ACTIONS(3), 1,
       sym_comment,
@@ -2075,7 +2075,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(3), 1,
       sym_comment,
     ACTIONS(283), 1,
-      sym_html_include_reference,
+      sym_tribracket_content,
   [1349] = 2,
     ACTIONS(3), 1,
       sym_comment,
@@ -2277,8 +2277,8 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [139] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_script_element, 2),
   [141] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_style_element, 2),
   [143] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_style_element, 2),
-  [145] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_html_include, 3),
-  [147] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_html_include, 3),
+  [145] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_tribracket, 3),
+  [147] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_tribracket, 3),
   [149] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_start_tag, 3),
   [151] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_start_tag, 3),
   [153] = {.entry = {.count = 1, .reusable = true}}, SHIFT(29),
