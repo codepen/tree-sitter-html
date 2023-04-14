@@ -75,10 +75,6 @@
         }
       ]
     },
-    "tribracket_content": {
-      "type": "PATTERN",
-      "value": "[^}]*"
-    },
     "tribracket": {
       "type": "SEQ",
       "members": [
@@ -102,6 +98,10 @@
           "value": "}}}"
         }
       ]
+    },
+    "tribracket_content": {
+      "type": "PATTERN",
+      "value": "[^}]*"
     },
     "element": {
       "type": "CHOICE",
