@@ -5,9 +5,6 @@
  * @license MIT
  */
 
-/// <reference types="tree-sitter-cli/dsl" />
-// @ts-check
-
 module.exports = grammar({
   name: "html",
 
@@ -37,11 +34,20 @@ module.exports = grammar({
         $.doctype,
         $.entity,
         $.text,
+        $.tribracket,
         $.element,
         $.script_element,
         $.style_element,
         $.erroneous_end_tag
       ),
+
+    // We have to wrap the opening '{{{' token in `token(prec())` calls here to
+    // force the lexer to give precedence to this rule over the `text` rule. I'm
+    // not 100% how this works, but this was suggested by @ahlinc in this
+    // Discord thread:
+    // https://discord.com/channels/1063097320771698699/1063097321648312354
+    tribracket: ($) => seq(token(prec(1, "{{{")), $.tribracket_content, "}}}"),
+    tribracket_content: ($) => /[^}]*/,
 
     element: ($) =>
       choice(

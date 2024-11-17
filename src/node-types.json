@@ -63,6 +63,10 @@
         {
           "type": "text",
           "named": true
+        },
+        {
+          "type": "tribracket",
+          "named": true
         }
       ]
     }
@@ -113,6 +117,10 @@
         },
         {
           "type": "text",
+          "named": true
+        },
+        {
+          "type": "tribracket",
           "named": true
         }
       ]
@@ -248,6 +256,21 @@
     }
   },
   {
+    "type": "tribracket",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tribracket_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "\"",
     "named": false
   },
@@ -314,5 +337,17 @@
   {
     "type": "text",
     "named": true
+  },
+  {
+    "type": "tribracket_content",
+    "named": true
+  },
+  {
+    "type": "{{{",
+    "named": false
+  },
+  {
+    "type": "}}}",
+    "named": false
   }
 ]

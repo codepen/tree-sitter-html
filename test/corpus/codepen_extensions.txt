@@ -10,7 +10,7 @@ HTML Include
 </body>
 ---
 
-(fragment
+(document
   (doctype)
   (tribracket (tribracket_content))
   (element
