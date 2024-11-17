@@ -1,38 +1,63 @@
 {
   "name": "tree-sitter-html",
-  "version": "0.19.0",
+  "version": "0.23.2",
   "description": "HTML grammar for tree-sitter",
-  "main": "bindings/node",
-  "keywords": [
-    "parser",
-    "lexer"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tree-sitter/tree-sitter-html.git"
-  },
-  "authors": [
-    "Max Brunsfeld <maxbrunsfeld@gmail.com>",
-    "Ashi Krishnan <queerviolet@github.com>"
-  ],
+  "repository": "https://github.com/tree-sitter/tree-sitter-html",
   "license": "MIT",
+  "author": {
+    "name": "Max Brunsfeld",
+    "email": "maxbrunsfeld@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Ashi Krishnan",
+      "email": "queerviolet@github.com"
+    },
+    {
+      "name": "Amaan Qureshi",
+      "email": "amaanq12@gmail.com"
+    }
+  ],
+  "maintainers": [
+    {
+      "name": "Amaan Qureshi",
+      "email": "amaanq12@gmail.com"
+    }
+  ],
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "keywords": [
+    "incremental",
+    "parsing",
+    "tree-sitter",
+    "html"
+  ],
+  "files": [
+    "grammar.js",
+    "tree-sitter.json",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**",
+    "*.wasm"
+  ],
   "dependencies": {
-    "nan": "^2.14.0"
+    "nan": "^2.22.0"
   },
   "devDependencies": {
-    "tree-sitter-cli": "^0.19.1"
+    "eslint": "^9.14.0",
+    "eslint-config-treesitter": "^1.0.2",
+    "prebuildify": "^6.0.1",
+    "tree-sitter-cli": "^0.24.4"
   },
+  "packageManager": "yarn@4.5.1",
   "scripts": {
-    "test": "tree-sitter test && tree-sitter parse examples/*.html --quiet --time",
-    "test-windows": "tree-sitter test"
-  },
-  "tree-sitter": [
-    {
-      "scope": "text.html.basic",
-      "file-types": [
-        "html"
-      ],
-      "injection-regex": "html"
-    }
-  ]
+    "generate": "tree-sitter generate",
+    "lint": "eslint grammar.js",
+    "parse": "tree-sitter parse",
+    "prestart": "tree-sitter build --wasm",
+    "start": "tree-sitter playground",
+    "test": "tree-sitter generate && tree-sitter test"
+  }
 }
