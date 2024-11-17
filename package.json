@@ -53,6 +53,7 @@
     "tree-sitter-cli": "^0.24.4",
     "tree-sitter": "^0.21.1"
   },
+  "packageManager": "yarn@4.5.1",
   "scripts": {
     "install": "node-gyp-build",
     "lint": "eslint grammar.js",

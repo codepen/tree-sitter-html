@@ -9,20 +9,20 @@
 // @ts-check
 
 module.exports = grammar({
-  name: 'html',
+  name: "html",
 
   extras: $ => [
     $.comment,
     /\s+/,
   ],
 
-  externals: $ => [
+  externals: ($) => [
     $._start_tag_name,
     $._script_start_tag_name,
     $._style_start_tag_name,
     $._end_tag_name,
     $.erroneous_end_tag_name,
-    '/>',
+    "/>",
     $._implicit_end_tag,
     $.raw_text,
     $.comment,
