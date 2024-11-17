@@ -1,13 +1,40 @@
-node_modules
-build
-*.log
-package-lock.json
-target
-Cargo.lock
+# Rust artifacts
+target/
+
+# Node artifacts
+build/
+prebuilds/
+node_modules/
+
+# Swift artifacts
+.build/
+
+# Go artifacts
+_obj/
+
+# Python artifacts
+.venv/
+dist/
+*.egg-info
+*.whl
+
+# C artifacts
 *.a
-*.dylib
 *.so
+*.so.*
+*.dylib
+*.dll
+*.pc
+
+# Example dirs
+/examples/*/
+
+# Grammar volatiles
+*.wasm
+*.obj
 *.o
-bindings/c/*.h
-bindings/c/*.pc
-yarn.lock
+
+# Archives
+*.tar.gz
+*.tgz
+*.zip
