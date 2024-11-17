@@ -43,21 +43,23 @@
     "*.wasm"
   ],
   "dependencies": {
-    "nan": "^2.22.0"
+    "node-addon-api": "^8.2.2",
+    "node-gyp-build": "^4.8.2"
   },
   "devDependencies": {
     "eslint": "^9.14.0",
     "eslint-config-treesitter": "^1.0.2",
     "prebuildify": "^6.0.1",
-    "tree-sitter-cli": "^0.24.4"
+    "tree-sitter-cli": "^0.24.4",
+    "tree-sitter": "^0.21.1"
   },
-  "packageManager": "yarn@4.5.1",
   "scripts": {
-    "generate": "tree-sitter generate",
+    "install": "node-gyp-build",
     "lint": "eslint grammar.js",
-    "parse": "tree-sitter parse",
     "prestart": "tree-sitter build --wasm",
+    "generate": "tree-sitter generate",
     "start": "tree-sitter playground",
+    "test:og": "node --test bindings/node/*_test.js",
     "test": "tree-sitter generate && tree-sitter test"
   }
 }

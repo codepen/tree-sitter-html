@@ -5,8 +5,12 @@
       "camelcase": "HTML",
       "scope": "source.html",
       "path": ".",
-      "external-files": ["src/tag.h"],
-      "file-types": ["html"],
+      "external-files": [
+        "src/tag.h"
+      ],
+      "file-types": [
+        "html"
+      ],
       "highlights": "queries/highlights.scm",
       "injections": "queries/injections.scm",
       "injection-regex": "html"
@@ -33,6 +37,9 @@
   "bindings": {
     "c": true,
     "go": true,
-    "node": true
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
   }
 }
